@@ -3,65 +3,74 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "history-of-ai"
+name = "anything-ai-exploration"
 version = "0.2.0"
-description = "Learning AI history with Code"
+description = "Anything AI Exploration for Windows 11 with WSL2 (Ubuntu)"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.13"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "License :: OSI Approved :: MIT License", # Or choose another license
-    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows :: Windows 11",
+    "Operating System :: POSIX :: Linux",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Development Status :: 3 - Alpha",
 ]
 
 dependencies = [
-    "torch>=2.4.0",
-    "torchvision>=0.19.0",
-    "matplotlib>=3.9.1", # For visualization
-    "numpy>=1.26.0", # For numerical operations
-    "tqdm>=4.67.0", # For progress bars
-    "toml>=0.10.0", # For configuration file
-    "tensorboard>=2.19.0", # For visualizing training
-    "torch-tb-profiler>=0.4.3", # For PyTorch profiling with TensorBoard
-    "scikit-learn>=1.5.0", # For PCA, t-SNE, datasets
-    "umap-learn>=0.5.6", # For UMAP visualization
-    "packaging>=24.0", # Required by recent matplotlib versions
-    "Pillow>=10.4.0", # Required by matplotlib for image handling
-    "pyparsing>=3.1.2", # Required by matplotlib/dependencies
-    "cycler>=0.12.1", # Required by matplotlib for color cycling
-    "python-dateutil>=2.9.0", # Required by matplotlib for date handling
-    "kiwisolver>=1.4.5", # Required by matplotlib for layout solving
-    "six>=1.16.0", # Python 2/3 compatibility library (various dependencies)
-    "joblib>=1.4.2", # Used by scikit-learn for parallelism
-    "scipy>=1.14.0", # Core scientific library (dependency for scikit-learn/umap)
-    "threadpoolctl>=3.5.0", # Controls thread usage in numerical libraries
-    "numba>=0.58.0", # For parallel computing with NumPy
-    "llvmlite>=0.42.0", # Required by numba for LLVM-based compilation
-    "pytz>=2024.1", # Required by matplotlib for date handling
-    "pynndescent>=0.5.10", # For approximate nearest neighbor search
-    "typing_extensions>=4.11.0", # For Python 3.10+ compatibility
-    "tokenizers>=0.19.1", # Added for text tokenization (GPT-2)
-    "datasets>=2.14.5", # For loading and processing datasets
-    "transformers>=4.35.0", # For loading and processing datasets
-    "gradio>=4.39.0", # For creating web interfaces
-    "pyarrow>=19.0.1",
-    "pandas>=2.1.0",
-    "seaborn>=0.13.0",
-    "matplotlib>=3.9.1",
-    "scipy>=1.14.0",
-    "scikit-learn>=1.5.0",
-    "umap-learn>=0.5.6",
-    "torch-tb-profiler>=0.4.3",
-    "ipykernel>=6.26.0",
-    "ipywidgets>=8.1.5",
-    "sympy>=1.12.0",
+    # Core ML libraries
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "accelerate>=0.20.0",  # For distributed training and mixed precision
+    "bitsandbytes>=0.39.0",  # For quantization and 8-bit optimizers
+    "peft>=0.4.0",  # For parameter-efficient fine-tuning
+    
+    # Data processing and visualization
+    "numpy>=1.23.0",
+    "pandas>=1.5.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "scikit-learn>=1.2.0",
+    "scipy>=1.10.0",
+    
+    # HuggingFace ecosystem
+    "transformers>=4.30.0",
+    "datasets>=2.12.0",
+    "tokenizers>=0.13.0",
+    "huggingface_hub>=0.16.0",  # For Hugging Face model/dataset repository interaction
+    
+    # Training utilities
+    "tqdm>=4.65.0",
+    "tensorboard>=2.12.0",
+    "torch-tb-profiler>=0.4.1",
+    "wandb>=0.15.0",  # For experiment tracking
+    
+    # File formats and configuration
+    "toml>=0.10.0",
+    "pyarrow>=12.0.0",
+    "python-dotenv>=1.0.0",  # For loading environment variables from .env file
+    
+    # UI and deployment
+    "gradio>=3.32.0",
+    
+    # Dependencies for system integration
+    "packaging>=23.0",
+    "Pillow>=9.5.0",
+    "pyparsing>=3.0.9",
+    "threadpoolctl>=3.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.3.0",
+    "pytest>=7.3.1",
+    "flake8>=6.0.0",
+    "mypy>=1.3.0",
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/your_username/your_repo_name" # Optional: Update later
-"Bug Tracker" = "https://github.com/your_username/your_repo_name/issues" # Optional: Update later 
+"Homepage" = "https://github.com/your_username/your_repo_name"
+"Bug Tracker" = "https://github.com/your_username/your_repo_name/issues" 
