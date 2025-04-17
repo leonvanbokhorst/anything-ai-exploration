@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Update progress
+1. Update the sprint tasklist in the README.md file in the directory of the current sprint if applicable.
+2. Update all links and descriptions to the notes and results of this sprint clickable in the same README of the sprint.
+3. Update @progress.md based on the current progress of the user if applicable.
+3. Finally update the backlog to be current and tidy. Do we need to change direction? Are we on track to get to our epic?

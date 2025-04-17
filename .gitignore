@@ -1,0 +1,33 @@
+.env
+.venv
+.vscode
+.idea
+.DS_Store/
+DS_Store
+.pytest_cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+*.egg-info
+
+# runs
+runs/
+
+# Checkpoints
+checkpoints/
+
+# Results
+results/
+
+# Logs
+logs/
+
+# Data
+data/
+# Models
+models/
+

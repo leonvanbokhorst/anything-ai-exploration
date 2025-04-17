@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Create a new sprint following these steps:
+
+Given the [AGILE_FRAMEWORK.md](mdc:AGILE_FRAMEWORK.md)
+1. Read [progress.md](mdc:progress.md) to understand what we did before.
+1. Check the [backlog.md](mdc:sprints/backlog.md) to come up with the best logical sprint tasks towrds our given the epic and previous sprints.
+2. Add the next sprint directory structure to the sprints/ directory 
+3. Write the README with tasks for the sprint in the sprint dirctory root (see previous sprint as example)
