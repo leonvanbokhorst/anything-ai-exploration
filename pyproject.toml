@@ -24,10 +24,9 @@ dependencies = [
     # Core ML libraries
     "torch>=2.0.0",
     "torchvision>=0.15.0",
-    "accelerate>=0.20.0",  # For distributed training and mixed precision
-    "bitsandbytes>=0.39.0",  # For quantization and 8-bit optimizers
-    "peft>=0.4.0",  # For parameter-efficient fine-tuning
-    
+    "accelerate>=0.20.0", # For distributed training and mixed precision
+    "bitsandbytes>=0.39.0", # For quantization and 8-bit optimizers
+    "peft>=0.4.0", # For parameter-efficient fine-tuning
     # Data processing and visualization
     "numpy>=1.23.0",
     "pandas>=1.5.0",
@@ -35,27 +34,22 @@ dependencies = [
     "seaborn>=0.12.0",
     "scikit-learn>=1.2.0",
     "scipy>=1.10.0",
-    
     # HuggingFace ecosystem
     "transformers>=4.30.0",
     "datasets>=2.12.0",
     "tokenizers>=0.13.0",
-    "huggingface_hub>=0.16.0",  # For Hugging Face model/dataset repository interaction
-    
+    "huggingface_hub>=0.16.0", # For Hugging Face model/dataset repository interaction
     # Training utilities
     "tqdm>=4.65.0",
     "tensorboard>=2.12.0",
     "torch-tb-profiler>=0.4.1",
-    "wandb>=0.15.0",  # For experiment tracking
-    
+    "wandb>=0.15.0", # For experiment tracking
     # File formats and configuration
     "toml>=0.10.0",
     "pyarrow>=12.0.0",
-    "python-dotenv>=1.0.0",  # For loading environment variables from .env file
-    
+    "python-dotenv>=1.0.0", # For loading environment variables from .env file
     # UI and deployment
     "gradio>=3.32.0",
-    
     # Dependencies for system integration
     "packaging>=23.0",
     "Pillow>=9.5.0",

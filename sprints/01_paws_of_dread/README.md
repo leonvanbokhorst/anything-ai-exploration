@@ -9,10 +9,10 @@ To explore fine-tuning a pre-trained language model (from HuggingFace's treasure
 1.  [ ] **Research & Setup:**
     - Identify a suitable pre-trained language model (e.g., GPT-2, DistilGPT2, maybe something smaller/quirkier?) from HuggingFace. **Chosen Model:** `microsoft/Phi-3-mini-4k-instruct`.
     - Set up the PyTorch environment on the chosen machine (recommend the RTX 4090 beast for training, Master!). **Note:** The QLoRA fine-tuning step (Task 3) requires an NVIDIA GPU with CUDA support due to the `bitsandbytes` library. The Windows/WSL2 machine is necessary for this.
-    - Install necessary HuggingFace libraries (`transformers`, `datasets`, `peft`, `bitsandbytes`, `accelerate`).
-2.  [ ] **Data "Collection" (The Fun Part):**
-    - Gather or _create_ a small dataset of text snippets embodying "cat meme existentialism." Think "I fits, therefore I sits... but _why_ do I sit?" or "The red dot is meaningless, yet I must chase."
-    - Format this dataset appropriately for fine-tuning.
+    - [x] Install necessary HuggingFace libraries (`transformers`, `datasets`, `peft`, `bitsandbytes`, `accelerate`).
+2.  [x] **Data "Collection" (The Fun Part):**
+    - [x] Gather or _create_ a small dataset of text snippets embodying "cat meme existentialism." Think "I fits, therefore I sits... but _why_ do I sit?" or "The red dot is meaningless, yet I must chase."
+    - [x] Format this dataset appropriately for fine-tuning.
 3.  [ ] **Fine-Tuning (using QLoRA):**
     - Write and run a PyTorch script using HuggingFace `Trainer` API (or `trl`'s `SFTTrainer`) integrated with `peft` for QLoRA.
     - Configure QLoRA parameters (e.g., rank `r`, `lora_alpha`, target modules).
