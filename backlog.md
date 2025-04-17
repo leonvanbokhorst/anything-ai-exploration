@@ -2,5 +2,8 @@
 
 ## Potential Next Sprints:
 
-- **Sprint Idea: Existential Cat Memes:** Can we fine-tune a language model (e.g., from HuggingFace) to understand and generate text expressing philosophical angst (like existential dread), but only using the language and context of cat memes? What does it mean to knock something off the table if the table represents societal expectations? Meow is the void looking back?
-- [Add more gloriously weird ideas here]
+
+
+## Completed Ideas:
+
+- **Sprint 1: Existential Cat Memes:** Fine-tuned Phi-3-mini using QLoRA to generate text expressing philosophical angst in the style of cat memes. ([See Progress](progress.md#sprint-1-the-paws-of-dread-completed))

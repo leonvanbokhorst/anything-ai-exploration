@@ -21,9 +21,6 @@ runs/
 # Checkpoints
 checkpoints/
 
-# Results
-results/
-
 # Logs
 logs/
 
@@ -33,4 +30,5 @@ data/
 models/
 
 results-*/
+results/
 
