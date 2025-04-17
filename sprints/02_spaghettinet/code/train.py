@@ -81,6 +81,8 @@ def main() -> None:
         test(model, device, test_loader, criterion)
 
     # Save the final model
+    if not os.path.exists(os.path.join(os.path.dirname(__file__), '..', 'results')):
+        os.makedirs(os.path.join(os.path.dirname(__file__), '..', 'results'))
     result_path = os.path.join(os.path.dirname(__file__), '..', 'results', 'spaghettinet_mnist.pt')
     torch.save(model.state_dict(), result_path)
     print(f"Training complete. Model saved to {result_path}")
