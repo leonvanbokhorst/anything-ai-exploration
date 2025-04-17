@@ -24,7 +24,9 @@ project_root/
 │   ├── 01_sprint_name/       # Example completed sprint
 │   │   ├── README.md         # Goals, tasks, findings
 │   │   ├── docs/             # Working notes, logs, documentation
+|   |   |   ├── 01_docname.md # etc            
 │   │   └── code/             # Outputs, code, practice files
+|   |   |   ├── filename.py   # no numbers
 └── backlog.md                # Ideas for future sprints
 └── progress.md               # Log of our progress and sprint notes
 ```

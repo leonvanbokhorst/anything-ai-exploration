@@ -32,3 +32,5 @@ data/
 # Models
 models/
 
+results-*/
+
