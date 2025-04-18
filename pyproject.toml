@@ -25,7 +25,6 @@ dependencies = [
     "torch~=2.3.0",
     "torchvision~=0.18.0",
     "accelerate~=0.30.0",
-    "bitsandbytes~=0.43.0",
     "peft~=0.11.0",
     # Data processing and visualization
     "numpy>=1.23.0",
@@ -57,6 +56,8 @@ dependencies = [
     "threadpoolctl>=3.1.0",
     "trl~=0.9.4",
     "networkx>=3.4.2",
+    "lightgbm>=4.6.0",
+    "optuna>=4.3.0",
 ]
 
 [project.optional-dependencies]
