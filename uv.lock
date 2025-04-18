@@ -178,8 +178,9 @@ source = { editable = "." }
 dependencies = [
     { name = "accelerate" },
     { name = "datasets" },
+    { name = "diffusers" },
     { name = "gradio" },
-    { name = "huggingface-hub" },
+    { name = "huggingface-hub", extra = ["hf-xet"] },
     { name = "lightgbm" },
     { name = "matplotlib" },
     { name = "networkx" },
@@ -221,9 +222,10 @@ requires-dist = [
     { name = "accelerate", specifier = "~=0.30.0" },
     { name = "black", marker = "extra == 'dev'", specifier = ">=23.3.0" },
     { name = "datasets", specifier = "~=2.19.0" },
+    { name = "diffusers", specifier = ">=0.33.1" },
     { name = "flake8", marker = "extra == 'dev'", specifier = ">=6.0.0" },
     { name = "gradio", specifier = ">=3.32.0" },
-    { name = "huggingface-hub", specifier = ">=0.16.0" },
+    { name = "huggingface-hub", extras = ["hf-xet"], specifier = ">=0.16.0" },
     { name = "lightgbm", specifier = ">=4.6.0" },
     { name = "matplotlib", specifier = ">=3.7.0" },
     { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.3.0" },
@@ -473,6 +475,25 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/52/e7/6ee66732f74e4fb1c8915e58b3c253aded777ad0fa457f3f831dd0cd09b4/datasets-2.19.2.tar.gz", hash = "sha256:eccb82fb3bb5ee26ccc6d7a15b7f1f834e2cc4e59b7cff7733a003552bad51ef", size = 2215337 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/3f/59/46818ebeb708234a60e42ccf409d20709e482519d2aa450b501ddbba4594/datasets-2.19.2-py3-none-any.whl", hash = "sha256:e07ff15d75b1af75c87dd96323ba2a361128d495136652f37fd62f918d17bb4e", size = 542113 },
+]
+
+[[package]]
+name = "diffusers"
+version = "0.33.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "filelock" },
+    { name = "huggingface-hub" },
+    { name = "importlib-metadata" },
+    { name = "numpy" },
+    { name = "pillow" },
+    { name = "regex" },
+    { name = "requests" },
+    { name = "safetensors" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/82/cc/1ef6bdc99d3864f6d1ee11bdbe3708b9d33ce35e7671557f641897480956/diffusers-0.33.1.tar.gz", hash = "sha256:fc7f140295d2ec82b1e7474b77bb7057fc0686c14eadc54ca0e52a66527e18a2", size = 2896103 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e7/7a/f08f610cea8a3395ad3b4f586db23bedb43c68db6c3261145a15e7b63126/diffusers-0.33.1-py3-none-any.whl", hash = "sha256:027469e74f289338eb24127409f8d60d840b1b7ce4b27ffcd3134fd3b8431567", size = 3554612 },
 ]
 
 [[package]]
@@ -833,6 +854,21 @@ wheels = [
 ]
 
 [[package]]
+name = "hf-xet"
+version = "1.0.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/95/68/4c363b2e62cb3dbe12d2257ba9b22f101384692d4b9727c5f72433472cff/hf_xet-1.0.3.tar.gz", hash = "sha256:a6d16861a06dd4b8f7229c16b392c5fb8b9588ced89a6ee9bc3e66227f794353", size = 257227 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/26/12/ebbba4b64cb9c908bd5dee355da27f3cc5ad4f29b4b2835041d363388363/hf_xet-1.0.3-cp37-abi3-macosx_10_12_x86_64.whl", hash = "sha256:0705e5db0da5794ab048a8662a7b3aba220f963270b26abc92e8d05abca22451", size = 4979740 },
+    { url = "https://files.pythonhosted.org/packages/58/8f/34eadc408b834bcb55886b242a9783da3f63508c4bcbfda7a4f21e61f3d1/hf_xet-1.0.3-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:09a9565ca84049d48c99c83a82d08fbc21d63c04811fd2f7dd088292c1185bc5", size = 4806773 },
+    { url = "https://files.pythonhosted.org/packages/a1/de/00b2e2568a39c01b0e013db3300f4d5841f2e597d7b0518923c7881bd166/hf_xet-1.0.3-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:70e18534d46ab92bbc3125addaebc145f9b27e06eecd67b40c4342f4b92b677f", size = 53812632 },
+    { url = "https://files.pythonhosted.org/packages/e2/d8/4ff790370a6795418196553c33e7bcceaa73a7d587e21e4ccb7661b54a2a/hf_xet-1.0.3-cp37-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:da28fd32213ad5b8f60771aba44ac032ba19d752928cfd95914f09146b3f51ec", size = 52277180 },
+    { url = "https://files.pythonhosted.org/packages/83/dd/7b432918a3e9e09794674b81e852acc6e14177c0a4466ac0566b7e7f47a4/hf_xet-1.0.3-cp37-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:1b71118b8f7e9edf1ae56282388794f351163c7de5c22ea3737dffa9313f500e", size = 53309852 },
+    { url = "https://files.pythonhosted.org/packages/4d/a2/d7a5f452a3a8faaa82aeb3aceddab2e103c1b7028a00bbc4caebca5d79fe/hf_xet-1.0.3-cp37-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:5927d1986f87b7b80616eb6353a1402be1d72c46b6b0709b01ffc7623a159563", size = 53739471 },
+    { url = "https://files.pythonhosted.org/packages/82/81/966f800933043c0be989306f5224ef058543f7848f1e78d7ef3305bd069a/hf_xet-1.0.3-cp37-abi3-win_amd64.whl", hash = "sha256:014b5a40e62ad334f21513e5ba39b419117396031e9264dfc15dd598a1595029", size = 4123538 },
+]
+
+[[package]]
 name = "httpcore"
 version = "1.0.8"
 source = { registry = "https://pypi.org/simple" }
@@ -878,6 +914,11 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/93/27/1fb384a841e9661faad1c31cbfa62864f59632e876df5d795234da51c395/huggingface_hub-0.30.2-py3-none-any.whl", hash = "sha256:68ff05969927058cfa41df4f2155d4bb48f5f54f719dd0390103eefa9b191e28", size = 481433 },
 ]
 
+[package.optional-dependencies]
+hf-xet = [
+    { name = "hf-xet" },
+]
+
 [[package]]
 name = "idna"
 version = "3.10"
@@ -885,6 +926,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz", hash = "sha256:12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9", size = 190490 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl", hash = "sha256:946d195a0d259cbba61165e88e65941f16e9b36ea6ddb97f00452bae8b1287d3", size = 70442 },
+]
+
+[[package]]
+name = "importlib-metadata"
+version = "8.6.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "zipp" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/33/08/c1395a292bb23fd03bdf572a1357c5a733d3eecbab877641ceacab23db6e/importlib_metadata-8.6.1.tar.gz", hash = "sha256:310b41d755445d74569f993ccfc22838295d9fe005425094fad953d7f15c8580", size = 55767 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/79/9d/0fb148dc4d6fa4a7dd1d8378168d9b4cd8d4560a6fbf6f0121c5fc34eb68/importlib_metadata-8.6.1-py3-none-any.whl", hash = "sha256:02a89390c1e15fdfdc0d7c6b25cb3e62650d0494005c97d6f148bf5b9787525e", size = 26971 },
 ]
 
 [[package]]
@@ -2998,4 +3051,13 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/3b/2a/dd7ed1aa23fea996834278d7ff178f215b24324ee527df53d45e34d21d28/yarl-1.20.0-cp312-cp312-win32.whl", hash = "sha256:839de4c574169b6598d47ad61534e6981979ca2c820ccb77bf70f4311dd2cc64", size = 86355 },
     { url = "https://files.pythonhosted.org/packages/ca/c6/333fe0338305c0ac1c16d5aa7cc4841208d3252bbe62172e0051006b5445/yarl-1.20.0-cp312-cp312-win_amd64.whl", hash = "sha256:3d7dbbe44b443b0c4aa0971cb07dcb2c2060e4a9bf8d1301140a33a93c98e18c", size = 92904 },
     { url = "https://files.pythonhosted.org/packages/ea/1f/70c57b3d7278e94ed22d85e09685d3f0a38ebdd8c5c73b65ba4c0d0fe002/yarl-1.20.0-py3-none-any.whl", hash = "sha256:5d0fe6af927a47a230f31e6004621fd0959eaa915fc62acfafa67ff7229a3124", size = 46124 },
+]
+
+[[package]]
+name = "zipp"
+version = "3.21.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/3f/50/bad581df71744867e9468ebd0bcd6505de3b275e06f202c2cb016e3ff56f/zipp-3.21.0.tar.gz", hash = "sha256:2c9958f6430a2040341a52eb608ed6dd93ef4392e02ffe219417c1b28b5dd1f4", size = 24545 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b7/1a/7e4798e9339adc931158c9d69ecc34f5e6791489d469f5e50ec15e35f458/zipp-3.21.0-py3-none-any.whl", hash = "sha256:ac1bbe05fd2991f160ebce24ffbac5f6d11d83dc90891255885223d42b3cd931", size = 9630 },
 ]

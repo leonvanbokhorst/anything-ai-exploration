@@ -37,7 +37,7 @@ dependencies = [
     "transformers~=4.41.0",
     "datasets~=2.19.0",
     "tokenizers>=0.13.0",
-    "huggingface_hub>=0.16.0",
+    "huggingface-hub[hf-xet]>=0.16.0",
     # Training utilities
     "tqdm>=4.65.0",
     "tensorboard>=2.12.0",
@@ -51,13 +51,14 @@ dependencies = [
     "gradio>=3.32.0",
     # Dependencies for system integration
     "packaging>=23.0",
-    "Pillow>=9.5.0",
+    "pillow>=9.5.0",
     "pyparsing>=3.0.9",
     "threadpoolctl>=3.1.0",
     "trl~=0.9.4",
     "networkx>=3.4.2",
     "lightgbm>=4.6.0",
     "optuna>=4.3.0",
+    "diffusers>=0.33.1",
 ]
 
 [project.optional-dependencies]

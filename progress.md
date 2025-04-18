@@ -34,3 +34,20 @@ _(This log will track major milestones, completed sprints, and key learnings acr
   - [Design Documentation](sprints/02_spaghettinet/docs/)
 
 ---
+
+## Sprint 3: The Titanic Torch Voyage (Completed)
+
+- **Goal:** To design, build, and evaluate a custom PyTorch neural network model for predicting passenger survival on the classic Titanic dataset, exploring feature engineering and network architecture choices.
+- **Outcome:** Successfully implemented data preprocessing, feature engineering, custom PyTorch model, training pipeline, and evaluation; the model achieved improved performance over a baseline logistic regression.
+- **Key Learnings:**
+  - Embedding categorical variables improved predictive power.
+  - Hyperparameter tuning was essential for optimizing performance.
+  - Thorough exploratory data analysis and preprocessing significantly impacted model accuracy.
+- **Artifacts:**
+  - [Sprint README](sprints/03_titanic_torch_voyage/README.md)
+  - [Data Preprocessing Code](sprints/03_titanic_torch_voyage/code/preprocess_data.py)
+  - [Model Code](sprints/03_titanic_torch_voyage/code/titanic_model.py)
+  - [Training Script](sprints/03_titanic_torch_voyage/code/train.py)
+  - [Results and Submissions](sprints/03_titanic_torch_voyage/results/)
+
+---
