@@ -32,7 +32,7 @@ class DiffusionVisualizer:
         self.pipe.to(self.device)
         # Map attachment state indices to textual prompts
         self.prompt_map: Dict[int, str] = {
-            0: "a gentle pastel scene of calm closeness, art by Studio Ghibli",
+            0: "a gentle pastel scene of calm closeness, art by Studio Lonn",
             1: "a fragmented high-contrast collage reflecting anxious attachment",
             2: "a broken mosaic with jagged edges reflecting avoidant detachment",
         }

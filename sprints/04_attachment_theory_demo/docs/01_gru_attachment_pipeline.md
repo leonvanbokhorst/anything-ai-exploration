@@ -1,6 +1,83 @@
 # GRU-based Attachment-State Prediction Pipeline
 
-Welcome, novice AI explorer! This document walks you through how we use a simple GRU (Gated Recurrent Unit) to turn a sequence of social signals into an attachment-state prediction (secure, anxious, or avoidant).
+## Overview
+This pipeline ingests a time-series of social-signal features (e.g., torso distance, gaze overlap) and uses a GRU-based classifier to predict one of three attachment states: **Secure**, **Anxious**, or **Avoidant**.
+
+## Dependencies
+- Python 3.8+
+- PyTorch >=1.10
+- TQDM (progress bars)
+- NumPy
+
+## 1. Data Preparation
+1. Extract per-frame social signals into a feature vector (e.g., distances, angles).
+2. Save each interaction clip as a `.pt` file with:
+   ```python
+   {
+     'features': torch.Tensor of shape [seq_len, num_features],
+     'label':    int  # 0=secure, 1=anxious, 2=avoidant
+   }
+   ```
+3. Place all `.pt` files under `data/signals/`.
+
+## 2. Core Components
+
+### 2.1 SocialSignalDataset
+```python
+class SocialSignalDataset(Dataset):
+    def __init__(self, signal_files: List[str]):
+        self.signal_files = signal_files
+    def __getitem__(self, idx):
+        data = torch.load(self.signal_files[idx])
+        return data['features'], data['label']
+```
+Wraps your `.pt` files into a PyTorch `Dataset` for easy batching.
+
+### 2.2 AttachmentGRU
+```python
+model = AttachmentGRU(
+    input_size=num_features,
+    hidden_size=128,
+    num_layers=2,
+    num_classes=3,
+    dropout=0.1
+)
+``` 
+A simple GRU followed by a linear classifier on the last hidden state.
+
+### 2.3 build_dataloader
+```python
+loader = build_dataloader(signal_files, batch_size=32, shuffle=True, num_workers=0)
+``` 
+Creates a `DataLoader` with batching and optional shuffling.
+
+## 3. Training & Evaluation
+Integrate with standard PyTorch loops:
+```python
+optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3)
+criterion = nn.CrossEntropyLoss()
+for epoch in range(epochs):
+    train_epoch(model, loader, criterion, optimizer)
+    val_loss, val_acc = validate_epoch(model, val_loader, criterion)
+    print(f"Epoch {epoch}: Val Acc={val_acc:.2f}")
+```  
+Swap in `CrossEntropyLoss` since labels are integer classes.
+
+## 4. Quickstart
+From the `code/` directory:
+```bash
+python attachment_gru.py
+```  
+This will load any `.pt` files in `data/signals/`, build the model, and print a batch of predictions vs. labels.
+
+## 5. Next Steps & Tips
+- **Feature Engineering:** Add motion dynamics or facial keypoint metrics.
+- **Hyperparameter Tuning:** Experiment with `hidden_size`, `num_layers`, and learning rate.
+- **Model Variants:** Try LSTM or Transformer encoders for richer temporal modeling.
+- **Evaluation:** Track accuracy, confusion matrix, and ROC curves.
+
+---
+*Last updated: `$(date '+%Y-%m-%d')`*
 
 ---
 
